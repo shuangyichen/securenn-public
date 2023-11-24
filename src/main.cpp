@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 
 /****************************** SELECT NETWORK ******************************/ 
 	//MINIONN, Network-D in GAZELLE
-	whichNetwork = "MiniONN/GAZELLE-D";
+	whichNetwork = "MiniONN";
 	CNNConfig* l0 = new CNNConfig(16,1,5,5,MINI_BATCH_SIZE,28,28,2,2);
 	CNNConfig* l1 = new CNNConfig(16,16,5,5,MINI_BATCH_SIZE,12,12,2,2);
 	FCConfig* l2 = new FCConfig(MINI_BATCH_SIZE, 256, 100);
@@ -135,11 +135,11 @@ int main(int argc, char** argv)
 	// testMaxPoolDerivative(24, 24, 2, 2, 16, NUM_ITERATIONS);
 	// testMaxPoolDerivative(8, 8, 4, 4, 50, NUM_ITERATIONS);
 
-	whichNetwork += " train";
-	train(network, config);
+	// whichNetwork += " train";
+	// train(network, config);
 
-	// whichNetwork += " test";
-	// test(network);
+	whichNetwork += " test";
+	test(network);
 
 
 
