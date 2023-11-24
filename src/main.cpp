@@ -92,14 +92,17 @@ int main(int argc, char** argv)
 	aes_c_1 = new AESObject("files/keyD");
 	aes_parallel = new ParallelAESObject(argv[5]);
 
+    cout << "init communication" << endl;  
 	if (!STANDALONE)
 	{
 		initializeCommunication(argv[3], partyNum);
 		synchronize(2000000);	
 	}
-
+    cout << "communication done" << endl;  
+    cout << "--------------------------" << endl;  
 	if (PARALLEL)
 		aes_parallel->precompute();
+	cout << "----------parallel done----------------" << endl;  
 
 
 /****************************** RUN NETWORK/BENCHMARKS ******************************/ 
